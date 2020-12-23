@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css' ) }}">
+</head>
+<body id="f">
+    <form id="f" action="/busque" method="POST">
+<table border="0" style="border-collapse: collapse; width: 99.8%; text-align: left; height: 60px;">
+    <tr style="text-align: right;">
+        <td><a href="/logout">Cerrar sesion</a></td>
+    </tr>
+    <tr>
+        <td>{{mensaje}}</td>
+    </tr>
+        <tr style="height: 60px;">
+            <td style="width: 100%; text-align:left;">
+                <h1 id="Titulo">Blogs Mintic.edu.co</h1>
+            </td>
+        </tr>
+        <tr style="height: 40px;">
+            <td style="width: 100%; text-align: right;">
+                <input type="text" name="busca" placeholder="Buscar por tema"><input type="submit" class="btn btn-info" value="Buscar">
+            </td>
+        </tr>
+</table>
+</form>
+<table border="0" id="barra">
+        <tr style="height: 36px;">
+            <nav class="nav">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Ultimos blogs</a>
+                <a class="nav-link" href="/misb">Mis blogs</a>
+                <a class="nav-link" href="/nuevo">Nuevo blog</a>
+              </nav>
+        </tr>
+</table>
+{% for row in rows %}
+<form action="/leer" method="POST">
+<center>
+    <br>
+    <div style="background-color: rgb(152,205,200);width: 98%;">
+<table border="0" style="border-collapse: collapse; width: 95%; height: 85px; text-align: left;">
+        <tr style="height: 85px;margin-right: 10px;">
+            <td style="width: 50%; height: 85px; text-align: left;margin-left: 10px;">
+                <p>Titulo: {{row["titulo"]}}</p>
+                <p>Fecha: {{row["fecha"]}}</p>
+            </td>
+            <td style="width: 50%; height: 85px; text-align: right;">
+                <p>Tema: {{row["tema"]}}</p>
+                <p>Estado: {{row["estado"]}}</p>
+            </td>
+        </tr>
+</table>
+<table border="0" style="border-collapse: collapse; width: 95%; height: 10px;">
+    <tr>
+        <td><p style="overflow:hidden; width: 95%; height: 70px">{{row["blog"]}}</p>...<p>{{mensajer}}</p> </td>
+    </tr>
+    <tr style="text-align: right;">
+        <td><button type="submit" name = "idblog" value = "{{row['idblog']}}" class="btn btn-outline-info"> Leer </button></td>    
+    </tr>
+    </table>
+</center>
+</div>
+</form>
+{% endfor %}
+    </body>
+</html>   

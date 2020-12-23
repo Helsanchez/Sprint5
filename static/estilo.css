@@ -1,0 +1,45 @@
+#Titulo{
+  margin-left: 20px;
+  margin-top: 40px;
+  color: rgb(0,92,94);
+}
+#barra{
+  width: 68.2%;
+  height: 32px;
+  text-align: left;
+  margin-left:40px;
+}
+#ingresos{
+  margin-left: 5px;
+  margin-top: 7px; 
+  width: 300px; 
+  height: 25px;
+}
+h1 {
+  font-family: "Arial";
+} 
+#centrar {
+  margin-top: 200px;
+  font-family: "Arial";
+  color: rgb(2, 230, 218);
+} 
+
+#f{
+  background-color: rgb(211, 255, 251);
+  margin-top: 30px;
+}
+#t{
+  color: rgb(0,92,94);
+}
+#usuario{
+  width: 350px;
+  height: 300px;
+}
+.boton{
+  text-align: center;
+  min-width: 200px;
+}
+a{
+  text-align: center;
+  color: red;
+}
